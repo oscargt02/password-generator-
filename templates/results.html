@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>Welcome!</title>
+    </head>
+    <body>
+        <h1>Here is your password!</h1>
+        <p>  {{password}} </p>
+        <form method="post" action="/results">
+            <input type="text" name="length" placeholder="Password length?"/> <br>
+            <input type="text" name="numbers" placeholder="Do you want numbers?"/> <br>
+            <input type="text" name="special" placeholder="Do you want special characters?"/> <br>
+            <input type="submit" value="Submit"/>
+
+        </form>
+    </body>
+</html>

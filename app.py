@@ -1,9 +1,9 @@
 # ---- YOUR APP STARTS HERE ----
 # -- Import section --
 from flask import Flask
-# from flask import render_template
-# from flask import request
-
+from flask import render_template
+from flask import request
+import model
 
 # -- Initialization section --
 app = Flask(__name__)
@@ -13,4 +13,9 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/index')
 def index():
-    return "hello world"
+    return render_template("index.html") 
+
+@app.route('/results', methods=['GET', 'POST'])
+def results():
+    password = model.password_generator(int(request.form["length"]), request.form["numbers"], request.form["special"]) 
+    return render_template("results.html", password=password) 
