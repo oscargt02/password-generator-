@@ -9,22 +9,22 @@ def password_generator(length,numbers,special):
     numbers= numbers.lower()
     special= special.lower()
 
-    if numbers == "false" and special == "false":
-        for i in range(length):  
-            password += random.choice(string.ascii_letters) 
-    elif numbers == "true" and special == "false":
-        for i in range(length): 
+    if (numbers == "false" or numbers == "no") and (special == "false" or special == "no"):
+        for i in range(length):
+            password += random.choice(string.ascii_letters)
+    elif (numbers == "true" or numbers == "yes") and (special == "false" or special == "no"):
+        for i in range(length):
             password += random.choice(letters_numbers)
-    elif numbers == "false" and special == "true":
+    elif (numbers == "false" or numbers == "no") and (special == "true" or special == "yes"):
         for i in range(length):
-            password += random.choice(letters_special)   
-    elif numbers == "true" and special == "true":
+            password += random.choice(letters_special)
+    elif (numbers == "true" or numbers == "yes") and (special == "true" or special == "yes"):
         for i in range(length):
-            password += random.choice(all_characters) 
+            password += random.choice(all_characters)
     else:
         print("There is a problem")
         return "There is a problem"
-        
+
     return password 
 
 # def save_password(password):

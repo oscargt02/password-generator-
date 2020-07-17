@@ -23,10 +23,13 @@ h1 {
 
 p{
     font-size: 25px;
+    color: #F06543;
+    text-shadow: 2px 2px 2px #EF476F; 
 }
 
 input{
     width: 500px;
     border-radius: 5px;
     border-color: #391463; 
+    border-style: dashed;
 }
