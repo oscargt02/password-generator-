@@ -1,12 +1,14 @@
 <html>
     <head>
         <title>Welcome!</title>
+        <link href= "{{ url_for('static', filename='css/style.css') }}?q={{ time }}" rel= "stylesheet"> 
     </head>
+
     <body>
-        <h1>Welcome User!</h1>
+        <h1>Welcome User!</h1> 
         <p>We can generate your password here!</p>
         <form method= "post" action= "/results">
-            <input type="text" name="length" placeholder="Password length?"/><br>
+            <input type="text" name="length" placeholder="Password length?" /><br> 
             <input type="text" name="numbers" placeholder="Do you want numbers?"/><br>
             <input type="text" name="special" placeholder="Do you want special characters?"/><br>
             <input type="submit" value="Submit"/>
